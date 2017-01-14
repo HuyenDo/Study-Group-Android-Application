@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_color_2"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.sondo.cse110.NoteView">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/NoteTitle"
+        android:layout_alignParentTop="true"
+        android:textSize="40dp"
+        android:layout_alignRight="@+id/NoteContent"
+        android:layout_alignEnd="@+id/NoteContent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="top|center"
+        android:text="Title"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NoteContent"
+        android:layout_below="@+id/NoteTitle"
+        android:layout_centerHorizontal="true"
+        android:fillViewport="false"
+        android:layout_alignBottom="@+id/view">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/NoteContentText"
+            android:layout_marginTop="32dp"
+            android:layout_alignTop="@+id/NoteContent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center" />
+    </ScrollView>
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_question"
+            fab:fab_size="mini"
+            fab:fab_label="Edit this note"
+            android:src="@drawable/ic_content_create"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/NoteContent"
+            android:layout_alignEnd="@+id/NoteContent" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Deletebutton"
+            fab:fab_size="mini"
+            fab:fab_label="Delete this note"
+            android:src="@drawable/ic_action_delete"
+            android:layout_above="@+id/edit_question"
+            android:layout_alignRight="@+id/NoteContent"
+            android:layout_alignEnd="@+id/NoteContent" />
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>

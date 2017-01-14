@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_color_2"
+    tools:context="com.example.sondo.cse110.VotingAnswer">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Answer by"
+        android:id="@+id/UserText"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="40dp" />
+
+    <ScrollView
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_below="@+id/UserText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:layout_above="@+id/numVoteText">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Answer Here"
+                android:id="@+id/AnswerText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonMenu"
+        android:layout_above="@+id/numVoteText"
+        android:layout_alignRight="@+id/scrollView2"
+        android:layout_alignEnd="@+id/scrollView2">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/VotingButton"
+            android:src="@drawable/ic_action_done"
+            fab:fab_size="mini"
+            fab:fab_label="Vote this answer"
+            android:layout_above="@+id/ButtonMenu"
+            android:layout_alignRight="@+id/scrollView2"
+            android:layout_alignEnd="@+id/scrollView2" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteButton"
+            android:src="@drawable/ic_action_delete"
+            android:layout_above="@+id/edit_question"
+            fab:fab_size="mini"
+            fab:fab_label="Delete this answer"
+            android:layout_alignRight="@+id/scrollView2"
+            android:layout_alignEnd="@+id/scrollView2" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_question"
+            android:src="@drawable/ic_content_create"
+            android:layout_above="@+id/VotingButton"
+            fab:fab_size="mini"
+            fab:fab_label="Edit this answer"
+            android:layout_alignLeft="@+id/deleteButton"
+            android:layout_alignStart="@+id/deleteButton" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="people vote this answer correct."
+        android:id="@+id/numVoteText"
+        android:gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/ButtonMenu"
+        android:layout_alignEnd="@+id/ButtonMenu"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
